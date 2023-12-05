@@ -31,6 +31,7 @@ for mapping in totalTxt[1:]:
                         currMapping[i][1] -= sum(currMapping[i]) - startFrom
                 if startFrom < currMapping[i][0] and startFrom + rangeOf >= sum(currMapping[i]):
                     currMapping[i][0] = -1*(startDestination + (currMapping[i][0] - startFrom))
+                    currMapping[i][1] *= -1
                 elif startFrom < currMapping[i][0] and startFrom + rangeOf > currMapping[i][0]:
                     currMapping.append([-1*(startDestination + currMapping[i][0] - startFrom), -1*(startFrom + rangeOf - currMapping[i][0])])
                     currMapping[i] = [startFrom + rangeOf, sum(currMapping[i]) - (startFrom + rangeOf)]
