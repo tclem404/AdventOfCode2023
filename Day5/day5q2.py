@@ -30,15 +30,14 @@ for mapping in totalTxt[1:]:
                         currMapping.append([(startFrom + rangeOf), (sum(currMapping[i]) - startFrom - rangeOf)])
                         currMapping[i][1] -= sum(currMapping[i]) - startFrom
                 if startFrom < currMapping[i][0] and startFrom + rangeOf >= sum(currMapping[i]):
-                    currMapping[i][0] = startDestination + (currMapping[i][0] - startFrom)
+                    currMapping[i][0] = -1*(startDestination + (currMapping[i][0] - startFrom))
                 elif startFrom < currMapping[i][0] and startFrom + rangeOf > currMapping[i][0]:
-                    currMapping.append([-1*currMapping[i][0], -1*(startFrom + rangeOf - currMapping[i][0])])
+                    currMapping.append([-1*(startDestination + currMapping[i][0] - startFrom), -1*(startFrom + rangeOf - currMapping[i][0])])
                     currMapping[i] = [startFrom + rangeOf, sum(currMapping[i]) - (startFrom + rangeOf)]
 
 
-    currMapping = [[abs(y) for y in x] for x in currMapping]
+    currMapping = [[abs(y) for y in x] for x in currMapping if x[1] != 0]
 
 # meta solving, want 0 to not be answer, check next one
 # not good solution, but it works
-currMapping = [x for x in currMapping if 0 not in x]
 print(min(currMapping))
