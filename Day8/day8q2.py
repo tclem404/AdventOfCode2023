@@ -27,6 +27,8 @@ for i in range(len(currPos)):
 # note, this solution only works as all the paths are cyclic in line with the path
 # this is because they take a certain number of instruction cycles to cycle, hence all the
 # true prints
+# I also checked earlier but removed the code that the next val is the first non-'A'
+# node
 
 # this is not a solution for a general application, but that is not what this
 # advent calendar is really about
