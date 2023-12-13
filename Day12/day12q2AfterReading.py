@@ -6,6 +6,7 @@ springLists = [[list(x[0]), [int(y) for y in x[1].split(',')]] for x in springLi
 
 # from https://www.reddit.com/r/adventofcode/comments/18ge41g/2023_day_12_solutions/
 # spent nearly 2 hours on my try, but its finals week so I had to give up
+# still spent time understanding this solution
 @cache
 def recusrionFunc(springMapping, springIndividuals, result = 0):
     if not springIndividuals:
